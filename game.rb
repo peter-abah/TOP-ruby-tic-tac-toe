@@ -16,6 +16,8 @@ class Game
     end
   end
 
+  private
+
   def get_move
     puts 'Enter a valid move'
     loop do
@@ -25,8 +27,6 @@ class Game
     move
   end
 
-  private
-  
   def valid_move?(move)
     move.all { |e| e.between(0, 2) } ? @board.played?(move) : false
   end
