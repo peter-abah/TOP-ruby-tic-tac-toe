@@ -24,7 +24,7 @@ class Game
   def get_move
     puts 'Enter a valid move'
     loop do
-      move = gets.split(',').map(&:to_i)
+      move = gets.to_i
       break if valid_move?(move)
     end
     move
