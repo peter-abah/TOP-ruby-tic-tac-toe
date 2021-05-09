@@ -32,16 +32,17 @@ class Board
   end
 
   def to_s
-    result = [' _ _ _ ']
+    result = ['-' * 9]
     0.upto 2 do |y|
       row = ['|']
       0.upto 2 do |x|
-        row.push(board[y * 3 + x])
+        s = @board[y * 3 + x] || ' '
+        row.push(s)
       end
       row.push('|')
-      result.push(row.join(" "))
+      result.push(row.join(' '))
     end
-    result.push(' _ _ _ ')
-    result.join('\n')
+    result.push('-' * 9)
+    result.join("\n")
   end
 end
