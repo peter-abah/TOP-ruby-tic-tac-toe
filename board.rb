@@ -20,14 +20,14 @@ class Board
   end
 
   def win?(player)
-    BOARD_COMBINATIONS.some do |c|
-      c.all { |i| @board[i] == player }
+    BOARD_COMBINATIONS.any? do |c|
+      c.all? { |i| @board[i] == player }
     end
   end
 
   def draw?
-    BOARD_COMBINATIONS.all do |c|
-      c.all { |i| @board[i].nil? }
+    BOARD_COMBINATIONS.all? do |c|
+      c.all? { |i| @board[i].nil? }
     end
   end
 
