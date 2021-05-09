@@ -7,12 +7,11 @@ class Game
   def start
     turn = 0
     game_end = false
-    puts @board
     until game_end
+      puts @board
       current_player = @players[turn]
       move = get_move
       @board = @board.update(move, current_player)
-      puts @board
       game_end = game_end?
       turn = (turn + 1) % 2
     end
@@ -35,10 +34,10 @@ class Game
 
   def game_end?
     if @board.win?
-      puts "#{current_player} won"
+      puts "#{@board}\n#{current_player} won"
       true
     elsif @board.draw?
-      puts 'DRAW!'
+      puts "#{@board}\nDRAW!"
       true
     end
     false
