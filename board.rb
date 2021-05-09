@@ -30,4 +30,18 @@ class Board
       c.all { |i| @board[i].nil? }
     end
   end
+
+  def to_s
+    result = [' _ _ _ ']
+    0.upto 2 do |y|
+      row = ['|']
+      0.upto 2 do |x|
+        row.push(board[y * 3 + x])
+      end
+      row.push('|')
+      result.push(row.join(" "))
+    end
+    result.push(' _ _ _ ')
+    result.join('\n')
+  end
 end
