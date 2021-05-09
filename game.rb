@@ -14,6 +14,7 @@ class Game
       @board = @board.update(move, current_player)
       puts @board
       game_end = game_end?
+      turn = (turn + 1) % 2
     end
   end
 
