@@ -26,6 +26,10 @@ class Game
   end
 
   private
+  
+  def valid_move?(move)
+    move.all { |e| e.between(0, 2) } ? @board.played?(move) : false
+  end
 
   def game_end?
     if @board.win?
