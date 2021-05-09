@@ -7,11 +7,12 @@ class Game
   def start
     turn = 0
     game_end = false
-    display_board
+    puts @board
     until game_end
       current_player = @players[turn]
       move = get_move
       @board = @board.update(move, current_player)
+      puts @board
       game_end = game_end?
     end
   end
