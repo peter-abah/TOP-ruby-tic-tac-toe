@@ -1,3 +1,5 @@
+require 'board.rb'
+
 class Game
   def initialize
     @players = %w(X 0)
