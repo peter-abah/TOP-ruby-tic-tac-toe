@@ -34,15 +34,19 @@ class Board
   def to_s
     result = ['-' * 9]
     0.upto 2 do |y|
-      row = ['|']
-      0.upto 2 do |x|
-        s = @board[y * 3 + x] || ' '
-        row.push(s)
-      end
-      row.push('|')
-      result.push(row.join(' '))
+      result.push(create_row(y))
     end
     result.push('-' * 9)
     result.join("\n")
+  end
+
+  def create_row(y)
+    row = ['|']
+    0.upto 2 do |x|
+      s = @board[y * 3 + x] || ' '
+      row.push(s)
+    end
+    row.push('|')
+    row.join(' ')
   end
 end
