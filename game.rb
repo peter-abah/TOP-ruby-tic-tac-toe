@@ -12,13 +12,20 @@ class Game
       current_player = @players[turn]
       move = get_move
       @board = @board.update(move, current_player)
-      if @board.win?
-        puts "${current_player} won"
-        game_end = true
-      elsif @board.draw?
-        puts 'DRAW!'
-        game_end = true
-      end
+      game_end = game_end?
     end
+  end
+
+  private
+
+  def game_end?
+    if @board.win?
+      puts "#{current_player} won"
+      true
+    elsif @board.draw?
+      puts 'DRAW!'
+      true
+    end
+    false
   end
 end
