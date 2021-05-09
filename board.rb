@@ -8,4 +8,8 @@ class Board
     board[move] = player
     Board.new(board)
   end
+
+  def played?(move)
+    @board[move] ? true : false
+  end
 end
